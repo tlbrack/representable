@@ -8,7 +8,8 @@ module Representable
       @name     = sym.to_s
       @options  = options
       
-      options[:default] ||= [] if array?  # FIXME: move to CollectionBinding!
+      #TLB - having this automatically nils out relationships if they aren't in the representation
+      #options[:default] ||= [] if array?  # FIXME: move to CollectionBinding!
     end
     
     def clone
